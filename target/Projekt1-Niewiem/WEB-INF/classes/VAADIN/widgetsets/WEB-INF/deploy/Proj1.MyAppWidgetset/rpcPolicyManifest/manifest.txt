@@ -1,0 +1,2 @@
+# Module Proj1.MyAppWidgetset
+# RPC service class, partial path of RPC policy file

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Projekt1
 ==============
 
@@ -42,3 +43,6 @@ Using Vaadin pre-releases
 
 If Vaadin pre-releases are not enabled by default, use the Maven parameter
 "-P vaadin-prerelease" or change the activation default value of the profile in pom.xml .
+=======
+# VaadinProject
+>>>>>>> c13b371505e74e6ca90c3e232bc450d7ce53508f

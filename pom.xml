@@ -47,6 +47,7 @@
 	</dependencyManagement>
 
 	<dependencies>
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -84,10 +85,25 @@
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
 		</dependency>
+		
+<!-- 		<dependency>
+	        <groupId>com.vaadin</groupId>
+	        <artifactId>vaadin-client-compiled</artifactId>
+        	<version>${vaadin.version}</version>
+        </dependency> -->
+		
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4-1201-jdbc41</version>
+		</dependency>
+
+		
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- vaadin update widgetset step 1: need (re)build? -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

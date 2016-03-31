@@ -20,7 +20,7 @@ public class MyValidator implements Validator {
         	String text = (String) value;
         	if(text == "")
             	throw new InvalidValueException("Must be filled");
-        	else if (!(text.matches("[A-Z]{1}[a-z]*")))
+        	else if (!(text.matches("[A-ZĄĆĘŁŃÓŚŹŻ]{1}[a-ząćęłóńśźż]*")))
                 throw new InvalidValueException("Letters only accepted. The first letter must be capital.");
             
         }
@@ -31,12 +31,21 @@ public class MyValidator implements Validator {
         @Override
         public void validate(Object value) throws InvalidValueException {
         	String text = (String) value;
-        	if (!(text.matches("[A-Z]{1}[a-z]*")) && text.length()>0)
+        	if (!(text.matches("[A-ZĄĆĘŁŃÓŚŹŻ]{1}[a-ząćęłóńśźż]*")) && text.length()>0)
                 throw new InvalidValueException("Letters only accepted. The first letter must be capital.");
             
         }
  
     }
+	
+	public class RequiredTextValidator implements Validator{
+		@Override
+        public void validate(Object value) throws InvalidValueException {
+        	String text = (String) value;
+        	if(text == "")
+            	throw new InvalidValueException("Must be filled"); 
+        }
+	}
 	
 	public class UsernameValidator implements Validator {
 		@Override

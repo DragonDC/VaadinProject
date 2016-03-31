@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
 	
@@ -13,11 +14,11 @@ public class User {
 	private Date dateOfBirth;
 	private Date dateOfRegistration;
 	private Date dateOfLastLogin;
-	
+	private List<Book> books;
 	
 	public User(String firstName, String lastName, String username, String email, String password, Date dateOfBirth, 
 				Date dateOfRegistration, Date dateOfLastLogin) {
-		super();
+		//super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
@@ -31,6 +32,14 @@ public class User {
 	public User() {
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -53,14 +62,6 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getEmail() {
@@ -109,6 +110,14 @@ public class User {
 
 	public void setDateOfBirth(java.util.Date date) {
 		this.dateOfBirth = date;
+	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 }

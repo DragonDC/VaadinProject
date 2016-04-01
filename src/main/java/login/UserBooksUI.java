@@ -121,9 +121,41 @@ public class UserBooksUI extends UI {
                 
                 delete.addClickListener(new Button.ClickListener() {
                     public void buttonClick(ClickEvent event) {
-                    	int id = book.getId();
-                    	bookManager.deleteBook(id);
-                    	init(vaadinRequest);
+//                    	int id = book.getId();
+//                    	bookManager.deleteBook(id);
+//                    	init(vaadinRequest);
+                    	
+
+                        Window subWindow = new Window("Warning");
+                        subWindow.setHeight("200px");
+                        subWindow.setWidth("200px");
+                        VerticalLayout subContent = new VerticalLayout();
+                        subContent.setMargin(true);
+                        subWindow.setContent(subContent);
+                        
+                        Button yes = new Button("Yes");
+                        Button no = new Button("No");
+                        subContent.addComponent(new Label("Are you sure?"));
+                        subContent.addComponent(yes);
+                        subContent.addComponent(no);
+                        subWindow.center();
+                        addWindow(subWindow);
+                        yes.addClickListener(new Button.ClickListener() {
+                            public void buttonClick(ClickEvent event) {        
+                            	int id = book.getId();
+                            	bookManager.deleteBook(id);
+                            	init(vaadinRequest);  
+                            	subWindow.close();
+                            }
+                        });
+                        
+                        no.addClickListener(new Button.ClickListener() {
+                            public void buttonClick(ClickEvent event) {
+                            	subWindow.close();      				      		
+                            }
+                        });
+                        
+                        
                     }
                 });
                 

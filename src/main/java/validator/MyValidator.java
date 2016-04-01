@@ -78,6 +78,9 @@ public class MyValidator implements Validator {
              Date now = new Date(); 
              if (date!=null && date.after(now))
                  throw new InvalidValueException("Date after now!");
+             else if(date==null){
+            	 throw new InvalidValueException("Must be filled");
+             }
          }
 	}
 	

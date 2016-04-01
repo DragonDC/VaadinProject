@@ -186,9 +186,9 @@ public class RegistrationUI extends UI {
 				        }
 				        else{
 				        	ifSucceed = registrationManager.checkUserRegistration(bean);
-				        	Notification.show(Boolean.toString(ifSucceed), Notification.Type.TRAY_NOTIFICATION);
+				        	//Notification.show(Boolean.toString(ifSucceed), Notification.Type.TRAY_NOTIFICATION);
 				        	if(ifSucceed == true){
-					        	Page.getCurrent().setLocation("/mainPage");
+					        	Page.getCurrent().setLocation("/mainpage");
 					        }
 					        else{
 					        	username.setValue("");
